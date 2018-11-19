@@ -24,7 +24,10 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		id.push_back(i);
 	}
+	// add buffer
 	id.push_back(127);
+	// del buffer
+	id.pop_back();
 	return 0;
 }
 
