@@ -2,32 +2,12 @@
 //
 
 #include "stdafx.h"
-#include "deque"
+#include "vector"
 
 
-class Widget
-{
-public:
-	char name[512];
-};
 int _tmain(int argc, _TCHAR* argv[])
 {
-	deque<int> id;
-	for (int i = 0; i < 127; ++i)
-	{
-		id.push_back(i);
-	}
-	// add buffer
-	id.push_back(127);
-	// del buffer
-	id.pop_back();
-
-	deque<Widget> wd;
-	// add buffer
-	wd.push_back(Widget());
-	// del buffer
-	wd.pop_back();
-
+	vector<int> iv(20, 9);
 	return 0;
 }
 
