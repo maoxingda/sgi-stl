@@ -14,11 +14,11 @@
 
 #ifndef __TYPE_TRAITS_H
 #define __TYPE_TRAITS_H
-//
-//#ifndef __STL_CONFIG_H
-//#include <stl_config.h>
-//#endif
-//
+
+#ifndef __STL_CONFIG_H
+#include <stl_config.h>
+#endif
+
 /*
 This header file provides a framework for allowing compile time dispatch
 based on type attributes. This is useful when writing template code.

@@ -2,12 +2,12 @@
 //
 
 #include "stdafx.h"
-#include "vector"
+#include "list"
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	vector<int> iv(20, 9);
+	list<int> il(20, 9);
 	return 0;
 }
 

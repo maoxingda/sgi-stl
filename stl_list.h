@@ -259,7 +259,7 @@ _List_base<_Tp,_Alloc>::clear()
   _M_node->_M_prev = _M_node;
 }
 
-template <class _Tp, class _Alloc = __STL_DEFAULT_ALLOCATOR(_Tp) >
+template <class _Tp, class _Alloc = alloc >
 class list : protected _List_base<_Tp, _Alloc> {
   // requirements:
 
@@ -358,7 +358,7 @@ public:
   reference back() { return *(--end()); }
   const_reference back() const { return *(--end()); }
 
-  void swap(list<_Tp, _Alloc>& __x) { __STD::swap(_M_node, __x._M_node); }
+  void swap(list<_Tp, _Alloc>& __x) { swap(_M_node, __x._M_node); }
 
   iterator insert(iterator __position, const _Tp& __x) {
     _Node* __tmp = _M_create_node(__x);
@@ -758,7 +758,7 @@ inline void __List_base_reverse(_List_node_base* __p)
 {
   _List_node_base* __tmp = __p;
   do {
-    __STD::swap(__tmp->_M_next, __tmp->_M_prev);
+    swap(__tmp->_M_next, __tmp->_M_prev);
     __tmp = __tmp->_M_prev;     // Old next node is now prev.
   } while (__tmp != __p);
 }

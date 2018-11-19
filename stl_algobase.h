@@ -61,38 +61,38 @@
 //#include <stl_iterator_base.h>
 //#include <stl_iterator.h>
 //#endif
-//
-//// We pick up concept_checks.h from stl_iterator_base.h.
-//
-////__STL_BEGIN_NAMESPACE
-//
-//// swap and iter_swap
-//
-//template <class _ForwardIter1, class _ForwardIter2, class _Tp>
-//inline void __iter_swap(_ForwardIter1 __a, _ForwardIter2 __b, _Tp*) {
-//  _Tp __tmp = *__a;
-//  *__a = *__b;
-//  *__b = __tmp;
-//}
-//
-//template <class _ForwardIter1, class _ForwardIter2>
-//inline void iter_swap(_ForwardIter1 __a, _ForwardIter2 __b) {
-//  __STL_REQUIRES(_ForwardIter1, _Mutable_ForwardIterator);
-//  __STL_REQUIRES(_ForwardIter2, _Mutable_ForwardIterator);
-//  __STL_CONVERTIBLE(typename iterator_traits<_ForwardIter1>::value_type,
-//                    typename iterator_traits<_ForwardIter2>::value_type);
-//  __STL_CONVERTIBLE(typename iterator_traits<_ForwardIter2>::value_type,
-//                    typename iterator_traits<_ForwardIter1>::value_type);
-//  __iter_swap(__a, __b, __VALUE_TYPE(__a));
-//}
-//
-//template <class _Tp>
-//inline void swap(_Tp& __a, _Tp& __b) {
-//  __STL_REQUIRES(_Tp, _Assignable);
-//  _Tp __tmp = __a;
-//  __a = __b;
-//  __b = __tmp;
-//}
+
+// We pick up concept_checks.h from stl_iterator_base.h.
+
+//__STL_BEGIN_NAMESPACE
+
+// swap and iter_swap
+
+template <class _ForwardIter1, class _ForwardIter2, class _Tp>
+inline void __iter_swap(_ForwardIter1 __a, _ForwardIter2 __b, _Tp*) {
+  _Tp __tmp = *__a;
+  *__a = *__b;
+  *__b = __tmp;
+}
+
+template <class _ForwardIter1, class _ForwardIter2>
+inline void iter_swap(_ForwardIter1 __a, _ForwardIter2 __b) {
+  __STL_REQUIRES(_ForwardIter1, _Mutable_ForwardIterator);
+  __STL_REQUIRES(_ForwardIter2, _Mutable_ForwardIterator);
+  __STL_CONVERTIBLE(typename iterator_traits<_ForwardIter1>::value_type,
+                    typename iterator_traits<_ForwardIter2>::value_type);
+  __STL_CONVERTIBLE(typename iterator_traits<_ForwardIter2>::value_type,
+                    typename iterator_traits<_ForwardIter1>::value_type);
+  __iter_swap(__a, __b, __VALUE_TYPE(__a));
+}
+
+template <class _Tp>
+inline void swap(_Tp& __a, _Tp& __b) {
+  __STL_REQUIRES(_Tp, _Assignable);
+  _Tp __tmp = __a;
+  __a = __b;
+  __b = __tmp;
+}
 
 //--------------------------------------------------
 // min and max
