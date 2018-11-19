@@ -75,7 +75,8 @@
 #endif
 
 // Note: this function is simply a kludge to work around several compilers'
-//  bugs in handling constant expressions.
+// bugs in handling constant expressions.
+// return: num_elements in 512 bytes if sizeof(_Tp) < 512, otherwise, one element one buffer
 inline size_t __deque_buf_size(size_t __size) {
   return __size < 512 ? size_t(512 / __size) : size_t(1);
 }

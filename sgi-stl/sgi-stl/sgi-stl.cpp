@@ -28,6 +28,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	id.push_back(127);
 	// del buffer
 	id.pop_back();
+
+	deque<Widget> wd;
+	// add buffer
+	wd.push_back(Widget());
+	// del buffer
+	wd.pop_back();
+
 	return 0;
 }
 
