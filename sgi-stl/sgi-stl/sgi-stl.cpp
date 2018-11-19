@@ -15,25 +15,16 @@
 class Widget
 {
 public:
-	Widget()
-	{
-
-	}
-	~Widget()
-	{
-
-	}
+	char name[512];
 };
-#include <new.h>
 int _tmain(int argc, _TCHAR* argv[])
 {
-	deque<int> id(20, 9);
-	id.push_front(1);
-	id.push_back(2);
-	id.pop_front();
-	id.pop_back();
-	id.clear();
-	deque<Widget> wd(1, Widget());
+	deque<int> id;
+	for (int i = 0; i < 127; ++i)
+	{
+		id.push_back(i);
+	}
+	id.push_back(127);
 	return 0;
 }
 
