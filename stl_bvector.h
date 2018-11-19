@@ -534,12 +534,12 @@ public:
   explicit __VECTOR(const allocator_type& __a = allocator_type())
     : __BVECTOR_BASE(__a) {}
 
-  __VECTOR(size_type __n, bool __value,
+  __VECTOR(size_type __n, bool val,
             const allocator_type& __a = allocator_type())
     : __BVECTOR_BASE(__a)
   {
     _M_initialize(__n);
-    fill(_M_start._M_p, _M_end_of_storage, __value ? ~0 : 0);
+    fill(_M_start._M_p, _M_end_of_storage, val ? ~0 : 0);
   }
 
   explicit __VECTOR(size_type __n)

@@ -1023,8 +1023,8 @@ public:
   }
 
   insert_iterator<_Container>&
-  operator=(const typename _Container::value_type& __value) { 
-    iter = container->insert_after(iter, __value);
+  operator=(const typename _Container::value_type& val) { 
+    iter = container->insert_after(iter, val);
     return *this;
   }
   insert_iterator<_Container>& operator*() { return *this; }

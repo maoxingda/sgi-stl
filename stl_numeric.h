@@ -83,10 +83,10 @@ _OutputIterator
 __partial_sum(_InputIterator __first, _InputIterator __last,
               _OutputIterator __result, _Tp*)
 {
-  _Tp __value = *__first;
+  _Tp val = *__first;
   while (++__first != __last) {
-    __value = __value + *__first;
-    *++__result = __value;
+    val = val + *__first;
+    *++__result = val;
   }
   return ++__result;
 }
@@ -109,10 +109,10 @@ _OutputIterator
 __partial_sum(_InputIterator __first, _InputIterator __last, 
               _OutputIterator __result, _Tp*, _BinaryOperation __binary_op)
 {
-  _Tp __value = *__first;
+  _Tp val = *__first;
   while (++__first != __last) {
-    __value = __binary_op(__value, *__first);
-    *++__result = __value;
+    val = __binary_op(val, *__first);
+    *++__result = val;
   }
   return ++__result;
 }
@@ -135,11 +135,11 @@ _OutputIterator
 __adjacent_difference(_InputIterator __first, _InputIterator __last,
                       _OutputIterator __result, _Tp*)
 {
-  _Tp __value = *__first;
+  _Tp val = *__first;
   while (++__first != __last) {
     _Tp __tmp = *__first;
-    *++__result = __tmp - __value;
-    __value = __tmp;
+    *++__result = __tmp - val;
+    val = __tmp;
   }
   return ++__result;
 }
@@ -163,11 +163,11 @@ _OutputIterator
 __adjacent_difference(_InputIterator __first, _InputIterator __last, 
                       _OutputIterator __result, _Tp*,
                       _BinaryOperation __binary_op) {
-  _Tp __value = *__first;
+  _Tp val = *__first;
   while (++__first != __last) {
     _Tp __tmp = *__first;
-    *++__result = __binary_op(__tmp, __value);
-    __value = __tmp;
+    *++__result = __binary_op(__tmp, val);
+    val = __tmp;
   }
   return ++__result;
 }
@@ -238,12 +238,12 @@ inline _Tp power(_Tp __x, _Integer __n)
 
 template <class _ForwardIter, class _Tp>
 void 
-iota(_ForwardIter __first, _ForwardIter __last, _Tp __value)
+iota(_ForwardIter __first, _ForwardIter __last, _Tp val)
 {
   __STL_REQUIRES(_ForwardIter, _Mutable_ForwardIterator);
   __STL_CONVERTIBLE(_Tp, typename iterator_traits<_ForwardIter>::value_type);
   while (__first != __last)
-    *__first++ = __value++;
+    *__first++ = val++;
 }
 
 __STL_END_NAMESPACE

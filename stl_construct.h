@@ -33,7 +33,7 @@
 
 #include <new.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 // construct and destroy.  These functions are not part of the C++ standard,
 // and are provided for backward compatibility with the HP STL.  We also
@@ -44,8 +44,8 @@ __STL_BEGIN_NAMESPACE
 // Internal names
 
 template <class _T1, class _T2>
-inline void _Construct(_T1* __p, const _T2& __value) {
-  new ((void*) __p) _T1(__value);
+inline void _Construct(_T1* __p, const _T2& val) {
+  new ((void*) __p) _T1(val);
 }
 
 template <class _T1>
@@ -96,8 +96,8 @@ inline void _Destroy(wchar_t*, wchar_t*) {}
 // Old names from the HP STL.
 
 template <class _T1, class _T2>
-inline void construct(_T1* __p, const _T2& __value) {
-  _Construct(__p, __value);
+inline void construct(_T1* __p, const _T2& val) {
+  _Construct(__p, val);
 }
 
 template <class _T1>
@@ -115,7 +115,7 @@ inline void destroy(_ForwardIterator __first, _ForwardIterator __last) {
   _Destroy(__first, __last);
 }
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_CONSTRUCT_H */
 

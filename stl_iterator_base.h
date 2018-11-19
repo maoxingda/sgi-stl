@@ -37,7 +37,7 @@
 
 #include <concept_checks.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 struct input_iterator_tag {};
 struct output_iterator_tag {};
@@ -356,7 +356,7 @@ inline void advance(_InputIterator& __i, _Distance __n) {
   __advance(__i, __n, iterator_category(__i));
 }
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_ITERATOR_BASE_H */
 

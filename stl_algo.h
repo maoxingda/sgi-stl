@@ -255,14 +255,14 @@ _ForwardIter adjacent_find(_ForwardIter __first, _ForwardIter __last,
 // in the HP STL, is retained for backward compatibility.
 
 template <class _InputIter, class _Tp, class _Size>
-void count(_InputIter __first, _InputIter __last, const _Tp& __value,
+void count(_InputIter __first, _InputIter __last, const _Tp& val,
            _Size& __n) {
   __STL_REQUIRES(_InputIter, _InputIterator);
   __STL_REQUIRES(typename iterator_traits<_InputIter>::value_type,
                  _EqualityComparable);
   __STL_REQUIRES(_Tp, _EqualityComparable);
   for ( ; __first != __last; ++__first)
-    if (*__first == __value)
+    if (*__first == val)
       ++__n;
 }
 
@@ -281,14 +281,14 @@ void count_if(_InputIter __first, _InputIter __last, _Predicate __pred,
 
 template <class _InputIter, class _Tp>
 typename iterator_traits<_InputIter>::difference_type
-count(_InputIter __first, _InputIter __last, const _Tp& __value) {
+count(_InputIter __first, _InputIter __last, const _Tp& val) {
   __STL_REQUIRES(_InputIter, _InputIterator);
   __STL_REQUIRES(typename iterator_traits<_InputIter>::value_type,
                  _EqualityComparable);
   __STL_REQUIRES(_Tp, _EqualityComparable);
   typename iterator_traits<_InputIter>::difference_type __n = 0;
   for ( ; __first != __last; ++__first)
-    if (*__first == __value)
+    if (*__first == val)
       ++__n;
   return __n;
 }
@@ -606,13 +606,13 @@ _OutputIter generate_n(_OutputIter __first, _Size __n, _Generator __gen) {
 
 template <class _InputIter, class _OutputIter, class _Tp>
 _OutputIter remove_copy(_InputIter __first, _InputIter __last,
-                        _OutputIter __result, const _Tp& __value) {
+                        _OutputIter __result, const _Tp& val) {
   __STL_REQUIRES(_InputIter, _InputIterator);
   __STL_REQUIRES(_OutputIter, _OutputIterator);
   __STL_REQUIRES_BINARY_OP(_OP_EQUAL, bool,
        typename iterator_traits<_InputIter>::value_type, _Tp);
   for ( ; __first != __last; ++__first)
-    if (!(*__first == __value)) {
+    if (!(*__first == val)) {
       *__result = *__first;
       ++__result;
     }
@@ -636,15 +636,15 @@ _OutputIter remove_copy_if(_InputIter __first, _InputIter __last,
 
 template <class _ForwardIter, class _Tp>
 _ForwardIter remove(_ForwardIter __first, _ForwardIter __last,
-                    const _Tp& __value) {
+                    const _Tp& val) {
   __STL_REQUIRES(_ForwardIter, _Mutable_ForwardIterator);
   __STL_REQUIRES_BINARY_OP(_OP_EQUAL, bool,
        typename iterator_traits<_ForwardIter>::value_type, _Tp);
   __STL_CONVERTIBLE(_Tp, typename iterator_traits<_ForwardIter>::value_type);
-  __first = find(__first, __last, __value);
+  __first = find(__first, __last, val);
   _ForwardIter __i = __first;
   return __first == __last ? __first 
-                           : remove_copy(++__i, __last, __first, __value);
+                           : remove_copy(++__i, __last, __first, val);
 }
 
 template <class _ForwardIter, class _Predicate>
@@ -664,12 +664,12 @@ _ForwardIter remove_if(_ForwardIter __first, _ForwardIter __last,
 template <class _InputIter, class _OutputIter, class _Tp>
 _OutputIter __unique_copy(_InputIter __first, _InputIter __last,
                           _OutputIter __result, _Tp*) {
-  _Tp __value = *__first;
-  *__result = __value;
+  _Tp val = *__first;
+  *__result = val;
   while (++__first != __last)
-    if (!(__value == *__first)) {
-      __value = *__first;
-      *++__result = __value;
+    if (!(val == *__first)) {
+      val = *__first;
+      *++__result = val;
     }
   return ++__result;
 }
@@ -709,12 +709,12 @@ _OutputIter __unique_copy(_InputIter __first, _InputIter __last,
                           _OutputIter __result,
                           _BinaryPredicate __binary_pred, _Tp*) {
   __STL_BINARY_FUNCTION_CHECK(_BinaryPredicate, bool, _Tp, _Tp);
-  _Tp __value = *__first;
-  *__result = __value;
+  _Tp val = *__first;
+  *__result = val;
   while (++__first != __last)
-    if (!__binary_pred(__value, *__first)) {
-      __value = *__first;
-      *++__result = __value;
+    if (!__binary_pred(val, *__first)) {
+      val = *__first;
+      *++__result = val;
     }
   return ++__result;
 }
