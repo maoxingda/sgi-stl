@@ -25,7 +25,7 @@
  */
 
 #ifndef __STL_CONFIG_H
-# define __STL_CONFIG_H
+#define __STL_CONFIG_H
 
 // Flags:
 // * __STL_NO_BOOL: defined if the compiler doesn't have bool as a builtin
@@ -379,7 +379,7 @@
 #   if _MSC_VER >= 1200
 #     define __STL_PARTIAL_SPECIALIZATION_SYNTAX
 #     define __STL_HAS_NAMESPACES
-#     define __STL_CAN_THROW_RANGE_ERRORS
+//#     define __STL_CAN_THROW_RANGE_ERRORS
 #     define NOMINMAX
 #     undef min
 #     undef max
@@ -429,9 +429,9 @@
 #   define false 0
 # endif
 
-# ifdef __STL_NEED_TYPENAME
-#   define typename
-# endif
+//# ifdef __STL_NEED_TYPENAME
+//#   define typename class
+//# endif
 
 # ifdef __STL_LIMITED_DEFAULT_TEMPLATES
 #   define __STL_DEPENDENT_DEFAULT_TMPL(_Tp)
@@ -492,8 +492,8 @@
 # if defined(__STL_HAS_NAMESPACES) && !defined(__STL_NO_NAMESPACES)
 #   define __STL_USE_NAMESPACES
 #   define __STD std
-#   define //__STL_BEGIN_NAMESPACE namespace std {
-#   define //__STL_END_NAMESPACE }
+//#   define //__STL_BEGIN_NAMESPACE namespace std {
+//#   define //__STL_END_NAMESPACE }
 #   if defined(__STL_FUNCTION_TMPL_PARTIAL_ORDER) && \
        !defined(__STL_NO_RELOPS_NAMESPACE)
 #     define __STL_USE_NAMESPACE_FOR_RELOPS
@@ -508,8 +508,8 @@
 #   endif /* Use std::rel_ops namespace */
 # else
 #   define __STD 
-#   define //__STL_BEGIN_NAMESPACE 
-#   define //__STL_END_NAMESPACE 
+//#   define //__STL_BEGIN_NAMESPACE 
+//#   define //__STL_END_NAMESPACE 
 #   undef  __STL_USE_NAMESPACE_FOR_RELOPS
 #   define __STL_BEGIN_RELOPS_NAMESPACE 
 #   define __STL_END_RELOPS_NAMESPACE 
