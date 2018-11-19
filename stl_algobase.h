@@ -31,10 +31,10 @@
 
 #ifndef __SGI_STL_INTERNAL_ALGOBASE_H
 #define __SGI_STL_INTERNAL_ALGOBASE_H
-//
-//#ifndef __STL_CONFIG_H
-//#include <stl_config.h>
-//#endif
+
+#ifndef __STL_CONFIG_H
+#include <stl_config.h>
+#endif
 //#ifndef __SGI_STL_INTERNAL_RELOPS
 //#include <stl_relops.h>
 //#endif
@@ -56,11 +56,11 @@
 //#else /* __STL_USE_NEW_IOSTREAMS */
 //#include <iostream.h>
 //#endif /* __STL_USE_NEW_IOSTREAMS */
-//
-//#ifndef __SGI_STL_INTERNAL_ITERATOR_H
-//#include <stl_iterator_base.h>
-//#include <stl_iterator.h>
-//#endif
+
+#ifndef __SGI_STL_INTERNAL_ITERATOR_H
+#include <stl_iterator_base.h>
+#include <stl_iterator.h>
+#endif
 
 // We pick up concept_checks.h from stl_iterator_base.h.
 
