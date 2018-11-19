@@ -30,87 +30,87 @@
 
 #ifndef __SGI_STL_INTERNAL_UNINITIALIZED_H
 #define __SGI_STL_INTERNAL_UNINITIALIZED_H
-//
-////__STL_BEGIN_NAMESPACE
-//
-//// uninitialized_copy
-//
-//// Valid if copy construction is equivalent to assignment, and if the
-////  destructor is trivial.
-//template <class _InputIter, class _ForwardIter>
-//inline _ForwardIter 
-//__uninitialized_copy_aux(_InputIter __first, _InputIter __last,
-//                         _ForwardIter __result,
-//                         __true_type)
-//{
-//  return copy(__first, __last, __result);
-//}
-//
-//template <class _InputIter, class _ForwardIter>
-//_ForwardIter 
-//__uninitialized_copy_aux(_InputIter __first, _InputIter __last,
-//                         _ForwardIter __result,
-//                         __false_type)
-//{
-//  _ForwardIter __cur = __result;
-//  __STL_TRY {
-//    for ( ; __first != __last; ++__first, ++__cur)
-//      _Construct(&*__cur, *__first);
-//    return __cur;
-//  }
-//  __STL_UNWIND(_Destroy(__result, __cur));
-//}
-//
-//
-//template <class _InputIter, class _ForwardIter, class _Tp>
-//inline _ForwardIter
-//__uninitialized_copy(_InputIter __first, _InputIter __last,
-//                     _ForwardIter __result, _Tp*)
-//{
-//  typedef typename __type_traits<_Tp>::is_POD_type _Is_POD;
-//  return __uninitialized_copy_aux(__first, __last, __result, _Is_POD());
-//}
-//
-//template <class _InputIter, class _ForwardIter>
-//inline _ForwardIter
-//  uninitialized_copy(_InputIter __first, _InputIter __last,
-//                     _ForwardIter __result)
-//{
-//  return __uninitialized_copy(__first, __last, __result,
-//                              __VALUE_TYPE(__result));
-//}
-//
-//inline char* uninitialized_copy(const char* __first, const char* __last,
-//                                char* __result) {
-//  memmove(__result, __first, __last - __first);
-//  return __result + (__last - __first);
-//}
-//
-//inline wchar_t* 
-//uninitialized_copy(const wchar_t* __first, const wchar_t* __last,
-//                   wchar_t* __result)
-//{
-//  memmove(__result, __first, sizeof(wchar_t) * (__last - __first));
-//  return __result + (__last - __first);
-//}
-//
-//// uninitialized_copy_n (not part of the C++ standard)
-//
-//template <class _InputIter, class _Size, class _ForwardIter>
-//pair<_InputIter, _ForwardIter>
-//__uninitialized_copy_n(_InputIter __first, _Size __count,
-//                       _ForwardIter __result,
-//                       input_iterator_tag)
-//{
-//  _ForwardIter __cur = __result;
-//  __STL_TRY {
-//    for ( ; __count > 0 ; --__count, ++__first, ++__cur) 
-//      _Construct(&*__cur, *__first);
-//    return pair<_InputIter, _ForwardIter>(__first, __cur);
-//  }
-//  __STL_UNWIND(_Destroy(__result, __cur));
-//}
-//
+
+//__STL_BEGIN_NAMESPACE
+
+// uninitialized_copy
+
+// Valid if copy construction is equivalent to assignment, and if the
+//  destructor is trivial.
+template <class _InputIter, class _ForwardIter>
+inline _ForwardIter 
+__uninitialized_copy_aux(_InputIter __first, _InputIter __last,
+                         _ForwardIter __result,
+                         __true_type)
+{
+  return copy(__first, __last, __result);
+}
+
+template <class _InputIter, class _ForwardIter>
+_ForwardIter 
+__uninitialized_copy_aux(_InputIter __first, _InputIter __last,
+                         _ForwardIter __result,
+                         __false_type)
+{
+  _ForwardIter __cur = __result;
+  __STL_TRY {
+    for ( ; __first != __last; ++__first, ++__cur)
+      _Construct(&*__cur, *__first);
+    return __cur;
+  }
+  __STL_UNWIND(_Destroy(__result, __cur));
+}
+
+
+template <class _InputIter, class _ForwardIter, class _Tp>
+inline _ForwardIter
+__uninitialized_copy(_InputIter __first, _InputIter __last,
+                     _ForwardIter __result, _Tp*)
+{
+  typedef typename __type_traits<_Tp>::is_POD_type _Is_POD;
+  return __uninitialized_copy_aux(__first, __last, __result, _Is_POD());
+}
+
+template <class _InputIter, class _ForwardIter>
+inline _ForwardIter
+  uninitialized_copy(_InputIter __first, _InputIter __last,
+                     _ForwardIter __result)
+{
+  return __uninitialized_copy(__first, __last, __result,
+                              __VALUE_TYPE(__result));
+}
+
+inline char* uninitialized_copy(const char* __first, const char* __last,
+                                char* __result) {
+  memmove(__result, __first, __last - __first);
+  return __result + (__last - __first);
+}
+
+inline wchar_t* 
+uninitialized_copy(const wchar_t* __first, const wchar_t* __last,
+                   wchar_t* __result)
+{
+  memmove(__result, __first, sizeof(wchar_t) * (__last - __first));
+  return __result + (__last - __first);
+}
+
+// uninitialized_copy_n (not part of the C++ standard)
+
+template <class _InputIter, class _Size, class _ForwardIter>
+pair<_InputIter, _ForwardIter>
+__uninitialized_copy_n(_InputIter __first, _Size __count,
+                       _ForwardIter __result,
+                       input_iterator_tag)
+{
+  _ForwardIter __cur = __result;
+  __STL_TRY {
+    for ( ; __count > 0 ; --__count, ++__first, ++__cur) 
+      _Construct(&*__cur, *__first);
+    return pair<_InputIter, _ForwardIter>(__first, __cur);
+  }
+  __STL_UNWIND(_Destroy(__result, __cur));
+}
+
 //template <class _RandomAccessIter, class _Size, class _ForwardIter>
 //inline pair<_RandomAccessIter, _ForwardIter>
 //__uninitialized_copy_n(_RandomAccessIter __first, _Size __count,

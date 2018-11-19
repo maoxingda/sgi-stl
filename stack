@@ -27,6 +27,7 @@
 #ifndef __SGI_STL_STACK
 #define __SGI_STL_STACK
 
+#include <pair.h>
 #include <stl_algobase.h>
 #include <stl_alloc.h>
 #include <stl_construct.h>

@@ -27,6 +27,7 @@
 #ifndef __SGI_STL_LIST
 #define __SGI_STL_LIST
 
+#include <pair.h>
 #include <stl_algobase.h>
 #include <stl_alloc.h>
 #include <type_traits.h>
