@@ -67,7 +67,7 @@
  * template template parameters), and it has been removed.
  */
 
-//__STL_BEGIN_NAMESPACE 
+////__STL_BEGIN_NAMESPACE 
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1174
@@ -1657,7 +1657,7 @@ inline void swap(deque<_Tp,_Alloc>& __x, deque<_Tp,_Alloc>& __y) {
 #pragma reset woff 1375
 #endif
           
-//__STL_END_NAMESPACE 
+////__STL_END_NAMESPACE 
   
 #endif /* __SGI_STL_INTERNAL_DEQUE_H */
 

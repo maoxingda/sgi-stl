@@ -2,14 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "stl_alloc.h"
-#include "type_traits.h"
-#include "stl_iterator_base.h"
-#include "stl_iterator.h"
-#include "stl_construct.h"
-#include "stl_algobase.h"
-#include "stl_uninitialized.h"
-#include "stl_deque.h"
+#include "deque"
 
 
 class Widget

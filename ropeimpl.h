@@ -27,7 +27,7 @@
 # include <stdexcept>
 #endif
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1174
@@ -1580,7 +1580,7 @@ inline void rotate(
 #pragma reset woff 1174
 #endif
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 // Local Variables:
 // mode:C++

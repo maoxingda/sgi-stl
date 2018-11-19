@@ -23,7 +23,7 @@
 #include <float.h>
 #include <stl_config.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 enum float_round_style {
   round_indeterminate       = -1,
@@ -528,7 +528,7 @@ _Define_ldouble(signaling_NaN)
 #undef _Define_double
 #undef _Define_ldouble
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_CPP_LIMITS */
 

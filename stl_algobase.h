@@ -64,7 +64,7 @@
 //
 //// We pick up concept_checks.h from stl_iterator_base.h.
 //
-//__STL_BEGIN_NAMESPACE
+////__STL_BEGIN_NAMESPACE
 //
 //// swap and iter_swap
 //
@@ -687,7 +687,7 @@ void fill(_ForwardIter __first, _ForwardIter __last, const _Tp& val) {
 //  return __lexicographical_compare_3way(__first1, __last1, __first2, __last2);
 //}
 //
-//__STL_END_NAMESPACE
+////__STL_END_NAMESPACE
 //
 #endif /* __SGI_STL_INTERNAL_ALGOBASE_H */
 

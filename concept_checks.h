@@ -490,9 +490,9 @@ struct _STL_ERROR {
 
 /* Associated Type Requirements */
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 template <class _Iterator> struct iterator_traits;
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 template <class _Iter> 
 struct __value_type_type_definition_requirement_violation {

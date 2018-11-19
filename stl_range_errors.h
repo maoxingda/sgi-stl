@@ -22,7 +22,7 @@
 // __STL_DONT_THROW_RANGE_ERRORS is a hook so that users can disable
 // this exception throwing.
 
-#include <stl_config.h>
+//#include <stl_config.h>
 
 #if defined(__STL_CAN_THROW_RANGE_ERRORS) && \
     defined(__STL_USE_EXCEPTIONS) && \
@@ -36,10 +36,10 @@
     defined(__sgi) && !defined(__GNUC__) && \
     _COMPILER_VERSION >= 730 && defined(_STANDARD_C_PLUS_PLUS)
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 void __stl_throw_range_error(const char* __msg);
 void __stl_throw_length_error(const char* __msg);
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 // For other compilers where we're throwing range errors, include the
 // stdexcept header and throw the appropriate exceptions directly.
@@ -47,20 +47,20 @@ __STL_END_NAMESPACE
 
 #include <stdexcept>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 inline void __stl_throw_range_error(const char* __msg) 
   { throw range_error(__msg); }
 inline void __stl_throw_length_error(const char* __msg)
   { throw length_error(__msg); }
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 // Otherwise, define inline functions that do nothing.
 #else 
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 inline void __stl_throw_range_error(const char*) {}
 inline void __stl_throw_length_error(const char*) {}
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif
 

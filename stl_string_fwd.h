@@ -19,7 +19,7 @@
 #include <stl_alloc.h>
 #include <char_traits.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 template <class _CharT, 
           class _Traits = char_traits<_CharT>, 
@@ -31,7 +31,7 @@ typedef basic_string<wchar_t> wstring;
 
 static const char* __get_c_string(const string&);
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_STRING_FWD_H */
 

@@ -33,7 +33,7 @@
 
 #include <sequence_concepts.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 // Forward declarations of operators == and <, needed for friend declaration.
 
@@ -134,7 +134,7 @@ bool operator>=(const stack<_Tp,_Seq>& __x, const stack<_Tp,_Seq>& __y)
 
 #endif /* __STL_FUNCTION_TMPL_PARTIAL_ORDER */
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_STACK_H */
 

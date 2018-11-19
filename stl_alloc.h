@@ -90,7 +90,7 @@ extern "C"
 #	define __NODE_ALLOCATOR_THREADS false
 #endif
 
-//__STL_BEGIN_NAMESPACE
+////__STL_BEGIN_NAMESPACE
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1174
@@ -932,7 +932,7 @@ __default_alloc_template<__threads, __inst> ::_S_free_list[
 #pragma reset woff 1174
 #endif
 
-	//__STL_END_NAMESPACE
+	////__STL_END_NAMESPACE
 
 #undef __PRIVATE
 

@@ -51,7 +51,7 @@
 // a user-defined non-POD type.  However, _CharT must still have a
 // default constructor.
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1174
@@ -2018,9 +2018,9 @@ inline void swap(basic_string<_CharT,_Traits,_Alloc>& __x,
 // I/O.  
 
 #ifndef __STL_USE_NEW_IOSTREAMS 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 #include <iostream.h>
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 #endif /* __STL_USE_NEW_IOSTREAMS */
 
 #ifdef __STL_USE_NEW_IOSTREAMS
@@ -2364,11 +2364,11 @@ inline const char* __get_c_string(const string& __s) { return __s.c_str(); }
 #pragma reset woff 1375
 #endif
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #include <stl_hash_fun.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 template <class _CharT, class _Traits, class _Alloc>
 size_t __stl_string_hash(const basic_string<_CharT,_Traits,_Alloc>& __s) {
@@ -2402,7 +2402,7 @@ __STL_TEMPLATE_NULL struct hash<wstring> {
 
 #endif /* __STL_CLASS_PARTIAL_SPECIALIZATION */
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_STRING */
 

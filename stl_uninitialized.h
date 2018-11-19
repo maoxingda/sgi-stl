@@ -31,7 +31,7 @@
 #ifndef __SGI_STL_INTERNAL_UNINITIALIZED_H
 #define __SGI_STL_INTERNAL_UNINITIALIZED_H
 //
-//__STL_BEGIN_NAMESPACE
+////__STL_BEGIN_NAMESPACE
 //
 //// uninitialized_copy
 //
@@ -270,7 +270,7 @@ inline void uninitialized_fill(_ForwardIter __first,
 //  __STL_UNWIND(_Destroy(__first2, __mid2));
 //}
 //
-//__STL_END_NAMESPACE
+////__STL_END_NAMESPACE
 //
 #endif /* __SGI_STL_INTERNAL_UNINITIALIZED_H */
 

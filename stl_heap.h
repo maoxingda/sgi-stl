@@ -30,7 +30,7 @@
 #ifndef __SGI_STL_INTERNAL_HEAP_H
 #define __SGI_STL_INTERNAL_HEAP_H
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1209
@@ -288,7 +288,7 @@ sort_heap(_RandomAccessIterator __first,
 #pragma reset woff 1209
 #endif
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_HEAP_H */
 

@@ -33,7 +33,7 @@
 
 #include <sequence_concepts.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 // Forward declarations of operators < and ==, needed for friend declaration.
 
@@ -234,7 +234,7 @@ public:
 
 // no equality is provided
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_QUEUE_H */
 

@@ -33,7 +33,7 @@
 
 #include <concept_checks.h>
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 #if defined(__sgi) && !defined(__GNUC__) && (_MIPS_SIM != _MIPS_SIM_ABI32)
 #pragma set woff 1174
@@ -259,7 +259,7 @@ inline void swap(set<_Key,_Compare,_Alloc>& __x,
 #pragma reset woff 1375
 #endif
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_INTERNAL_SET_H */
 

@@ -21,7 +21,7 @@
 #include <iosfwd>
 #endif /* use new iostreams */
 
-__STL_BEGIN_NAMESPACE
+//__STL_BEGIN_NAMESPACE
 
 // Class __char_traits_base.
 
@@ -142,7 +142,7 @@ __STL_TEMPLATE_NULL class char_traits<wchar_t>
 {};
 
 
-__STL_END_NAMESPACE
+//__STL_END_NAMESPACE
 
 #endif /* __SGI_STL_CHAR_TRAITS_H */
 
