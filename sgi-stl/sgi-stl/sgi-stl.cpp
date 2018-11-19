@@ -2,12 +2,15 @@
 //
 
 #include "stdafx.h"
+#include "vector"
 #include "list"
+#include "deque"
+#include "stack"
+#include "queue"
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	list<int> il(20, 9);
 	return 0;
 }
 
